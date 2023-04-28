@@ -4,8 +4,8 @@
   "version": "1.0",
   "description": "Easily open WhatsApp chats from selected phone numbers in Firefox.",
   "icons": {
-    "48": "icons/icon64.png",
-    "96": "icons/icon128.png"
+    "48": "icons/icon48.png",
+    "96": "icons/icon96.png"
   },
   "permissions": ["contextMenus", "tabs", "storage", "*://restcountries.com/*"],
   "background": {
