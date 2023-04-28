@@ -23,7 +23,7 @@ Still pending approval :)
 1. Download the latest release from the [GitHub Releases page](https://github.com/Beinish/wame-hopper/releases).
 2. In Firefox, navigate to `about:addons`.
 3. Click the gear icon and select "Install Add-on From File."
-4. Choose the downloaded `.xpi` file and follow the prompts to install the extension.
+4. Choose the downloaded `.zip` file.
 
 ## Usage
 
