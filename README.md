@@ -36,3 +36,7 @@ You can customize the default country code and the delay before the `wa.me` tab 
 ## License
 
 This project is licensed under the [MIT License](LICENSE). See the `LICENSE` file for details.
+
+## Credit
+
+WhatsApp icons created by Freepik - [Flaticon](https://www.flaticon.com/free-icons/whatsap)
