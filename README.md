@@ -1,6 +1,6 @@
 # WaMe Hopper
 
-![WaMe Hopper Logo](icons/icon128.png)
+![WaMe Hopper Logo](icons/icon96.png)
 
 WaMe Hopper is a Firefox extension that allows users to easily open WhatsApp chats from selected phone numbers in Firefox. The extension automatically opens a WhatsApp web chat and then closes the intermediate `wa.me` tab after a user-defined delay.
 
