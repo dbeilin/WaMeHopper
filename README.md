@@ -16,7 +16,7 @@
 
 ### FireFox Addon
 
-Still pending approval :)
+1. Download [here](https://addons.mozilla.org/en-US/firefox/addon/wame-hopper/).
 
 ### Manual Installation
 
