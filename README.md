@@ -45,7 +45,7 @@ You can customize the default country code and the delay before the `wa.me` tab 
 
 ![right click menu](https://i.imgur.com/vRYoRfG.png)
 
-![options menu](https://i.imgur.com/Ba0yWFT.png)
+![options menu](https://i.imgur.com/ds1wBIH.png)
 
 ## License
 
