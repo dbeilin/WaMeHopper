@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "WaMe Hopper",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Easily open WhatsApp chats from selected phone numbers in Firefox.",
   "icons": {
     "48": "icons/icon48.png",
