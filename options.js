@@ -1,20 +1,23 @@
 const countryCodeSelect = document.getElementById('countryCode');
 const delayInput = document.getElementById('delay');
+const openWithSelect = document.getElementById('openWith');
 
-// Save the selected country code and delay to storage
+// Save the selected country code, delay, and open with option to storage
 function saveOptions() {
   browser.storage.local.set({
     countryCode: countryCodeSelect.value,
     delay: delayInput.value,
+    openWith: openWithSelect.value,
   });
 }
 
-// Load the saved country code and delay from storage
+// Load the saved country code, delay, and open with option from storage
 function loadOptions() {
-  browser.storage.local.get(['countryCode', 'delay']).then((data) => {
+  browser.storage.local.get(['countryCode', 'delay', 'openWith']).then((data) => {
     console.log('Loaded data:', data);
     countryCodeSelect.value = data.countryCode || '972';
     delayInput.value = data.delay || '0';
+    openWithSelect.value = data.openWith || 'whatsappWeb';
   });
 }
 
@@ -37,6 +40,7 @@ async function populateCountryCodes() {
 // Add event listeners
 countryCodeSelect.addEventListener('change', saveOptions);
 delayInput.addEventListener('change', saveOptions);
+openWithSelect.addEventListener('change', saveOptions);
 document.addEventListener('DOMContentLoaded', () => {
   console.log('DOMContentLoaded event');
   populateCountryCodes();
