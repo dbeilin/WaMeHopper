@@ -1,53 +1,130 @@
 body {
-    font-family: "Segoe UI", "Helvetica Neue", "Arial", sans-serif;
-    background-color: #f5f5f5;
-    padding: 30px;
-    color: #333;
-  }
-  
-  h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  h1 span {
-    color: #25D366;
-  }
-  
-  label {
-    display: block;
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-  }
-  
-  select,
-  input {
-    font-size: 1rem;
-    padding: 5px;
-    width: 100%;
-    max-width: 300px;
-    box-sizing: border-box;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #fff;
-  }
-  
-  footer {
-    margin-top: 20px;
-    padding-top: 10px;
-    border-top: 1px solid #ccc;
-    font-size: 14px;
-    text-align: center;
-  }
-  
-  footer a {
-    color: #333;
-    text-decoration: none;
-  }
-  
-  footer a:hover {
-    text-decoration: underline;
-  }
-  
+  font-family: 'Roboto', sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+::placeholder {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #128C7E;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h1 span {
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.form-group label {
+  width: 160px;
+}
+
+.form-group input,
+.form-group select {
+  width: calc(100% - 160px);
+}
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+input, select {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+#template-management {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.template {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.template input[type="text"]:first-child {
+  margin-right: 5px;
+}
+
+.template label {
+  font-size: 14px;
+  font-weight: normal;
+  margin-right: 5px;
+}
+
+.template input[type="text"],
+.template textarea {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.template textarea {
+  min-height: 50px;
+  resize: vertical;
+}
+
+.btn {
+  background-color: #128C7E;
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #075E54;
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+footer a {
+  color: #128C7E;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
