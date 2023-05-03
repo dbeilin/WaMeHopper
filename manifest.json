@@ -7,7 +7,7 @@
     "48": "icons/icon48.png",
     "96": "icons/icon96.png"
   },
-  "permissions": ["contextMenus", "tabs", "storage", "*://restcountries.com/*"],
+  "permissions": ["contextMenus", "tabs", "storage"],
   "background": {
     "scripts": ["background.js"]
   },
@@ -17,7 +17,7 @@
       "js": ["contentScript.js", "inject.js"]
     }
   ],
-  "web_accessible_resources": ["contentScript.js", "inject.js"],
+  "web_accessible_resources": ["contentScript.js", "inject.js", "countryCodes.json"],
   "options_ui": {
     "page": "options.html",
     "browser_style": true

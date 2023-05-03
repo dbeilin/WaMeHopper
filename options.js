@@ -54,6 +54,18 @@ function validateTemplateInput(input) {
   }
 }
 
+async function populateCountryCodes() {
+  const response = await fetch('countryCodes.json');
+  const countries = await response.json();
+
+  countries.forEach((country) => {
+    const option = document.createElement('option');
+    option.value = country.dial_code;
+    option.textContent = `${country.name} (${country.dial_code})`;
+    countryCodeSelect.appendChild(option);
+  });
+}
+
 // Load templates
 function loadTemplates() {
   browser.storage.local.get('templates').then(({ templates }) => {
