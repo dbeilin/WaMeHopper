@@ -50,6 +50,13 @@ form {
   width: calc(100% - 160px);
 }
 
+.info-note {
+  font-size: 14px;
+  color: #757575;
+  margin-top: 5px;
+  text-align: center;
+}
+
 label {
   font-size: 16px;
   font-weight: bold;
