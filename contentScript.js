@@ -10,9 +10,9 @@ window.startWhatsAppAutomation = function(phoneNumber, templateText) {
   
     function typeMessage(inputElement, message) {
       const event = new InputEvent('input', { bubbles: true });
-      inputElement.innerHTML = message;
+      inputElement.value = message;
       inputElement.dispatchEvent(event);
-    }
+    }    
   
     function openChatByNumber(phoneNumber) {
       const contactElement = [...document.querySelectorAll('.chat-title')].find(element => {
