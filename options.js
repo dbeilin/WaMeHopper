@@ -1,5 +1,4 @@
 const countryCodeSelect = document.getElementById('countryCode');
-const delayInput = document.getElementById('delay');
 const openWithSelect = document.getElementById('openWith');
 const addTemplateButton = document.getElementById('add-template');
 const templatesContainer = document.getElementById('templates');
@@ -14,16 +13,14 @@ async function init() {
 function saveOptions() {
   browser.storage.local.set({
     countryCode: countryCodeSelect.value,
-    delay: delayInput.value,
     openWith: openWithSelect.value,
   });
 }
 
 // Load the saved country code, delay, and open with option from storage
 function loadOptions() {
-  browser.storage.local.get(['countryCode', 'delay', 'openWith']).then((data) => {
+  browser.storage.local.get(['countryCode', 'openWith']).then((data) => {
     countryCodeSelect.value = data.countryCode || '972';
-    delayInput.value = data.delay || '0';
     openWithSelect.value = data.openWith || 'whatsappWeb';
   });
 }
@@ -66,8 +63,14 @@ function loadTemplates() {
       const templateElement = document.createElement('div');
       templateElement.classList.add('template');
 
+      // Add template name label and input
+      const nameLabel = document.createElement('label');
+      nameLabel.textContent = 'Name:';
+      nameLabel.htmlFor = `template-name-${index}`;
+
       const nameInput = document.createElement('input');
       nameInput.type = 'text';
+      nameInput.id = `template-name-${index}`;
       nameInput.value = template.name;
 
       nameInput.addEventListener('change', () => {
@@ -80,14 +83,14 @@ function loadTemplates() {
       });
       validateTemplateInput(nameInput);
 
-      const textInput = document.createElement('input');
-      textInput.type = 'text';
-      textInput.value = template.text;
+      // Add template text label and textarea
+      const textLabel = document.createElement('label');
+      textLabel.textContent = 'Text:';
+      textLabel.htmlFor = `template-text-${index}`;
 
-      textInput.addEventListener('change', () => {
-        templates[index].text = textInput.value;
-        saveTemplates(templates);
-      });
+      const textInput = document.createElement('textarea');
+      textInput.id = `template-text-${index}`;
+      textInput.value = template.text;
 
       textInput.addEventListener('input', () => {
         validateTemplateInput(textInput);
@@ -96,6 +99,7 @@ function loadTemplates() {
 
       const deleteButton = document.createElement('button');
       deleteButton.textContent = 'Delete';
+      deleteButton.classList.add('btn');
 
       deleteButton.addEventListener('click', () => {
         templates.splice(index, 1);
@@ -103,8 +107,12 @@ function loadTemplates() {
         loadTemplates();
       });
 
+      templateElement.appendChild(nameLabel);
       templateElement.appendChild(nameInput);
+      templateElement.appendChild(document.createElement('br'));
+      templateElement.appendChild(textLabel);
       templateElement.appendChild(textInput);
+      templateElement.appendChild(document.createElement('br'));
       templateElement.appendChild(deleteButton);
       templatesContainer.appendChild(templateElement);
     });
@@ -123,9 +131,7 @@ addTemplateButton.addEventListener('click', () => {
 
 // Add event listeners
 countryCodeSelect.addEventListener('change', saveOptions);
-delayInput.addEventListener('change', saveOptions);
 openWithSelect.addEventListener('change', saveOptions);
 
 // Call the init function when the DOM content is loaded
 document.addEventListener('DOMContentLoaded', init);
-
